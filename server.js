@@ -7,16 +7,20 @@ let express = require("express"),
     htmlRoutes = require('./app/routing/htmlRoutes.js');
 
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.text());
-    app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-
+    dataParseExpress();
     apiRoutes(app); 
     htmlRoutes(app);
     
 
+    function dataParseExpress() {
+        app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.text());
+        app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+    }
+      
+
 app.listen(PORT, function() {
     console.log('Listening on PORT: ' + PORT);
   });
-  
+
