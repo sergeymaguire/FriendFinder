@@ -148,7 +148,7 @@
     <br>
     <br>
 
-    <!-- Submit Button -->
+
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
      Submit</button>
 
@@ -161,11 +161,10 @@
 
   </div>
 
-  <!-- Modal -->
   <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
+    
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -184,7 +183,7 @@
   </div>
 
   <script type="text/javascript">
-    // Chosen CSS
+
     var config = {
       ".chosen-select": {},
       ".chosen-select-deselect": {
@@ -205,11 +204,9 @@
       $(selector).chosen(config[selector]);
     }
 
-    // Capture the form inputs
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
-      // Form validation
       function validateForm() {
         var isValid = true;
         $(".form-control").each(function() {
@@ -227,9 +224,9 @@
         return isValid;
       }
 
-      // If all required fields are filled
+   
       if (validateForm()) {
-        // Create an object for the user"s data
+    
         var userData = {
           name: $("#name").val(),
           photo: $("#photo").val(),
