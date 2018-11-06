@@ -1,4 +1,5 @@
 let express = require("express"),
+    friendsData = require('./app/data/friends.js'),
     path = require("path"),
     bodyParser = require("body-parser"),
     app = express(),
@@ -23,4 +24,7 @@ let express = require("express"),
 app.listen(PORT, function() {
     console.log('Listening on PORT: ' + PORT);
   });
+
+
+
 
