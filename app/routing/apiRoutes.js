@@ -7,8 +7,8 @@ function apiRoutes(app) {
 
     app.post('/api/friends', function (req, res) {
         let friendIndex = getBestMatch(req.body.scores);
-        console.dir("req " + req);
-        console.log("req.scores " + req.body.scores);
+        //console.dir("req " + req);
+        //console.log("req.scores " + req.body.scores);
         res.json(friendsData[friendIndex]);
     });
 
@@ -17,11 +17,14 @@ function apiRoutes(app) {
 //return index of best match to friendsData
 function getBestMatch(scores) {
     var total = 0,
-        bestTotal = 0,
+        bestTotal = 99999,
         bestIndex = 0;
     for(var i = 0; i < friendsData.length; i++) {
+        //console.log("friendsData[i] " + friendsData[i].scores);
+        //console.log("scores " + scores);
         total = matchFriends(friendsData[i], scores);
-        if(total > bestTotal) {
+        if(total < bestTotal) {
+            //console.log("bestTotal " + bestTotal);
             bestTotal = total;
             bestIndex = i;
         }
@@ -35,7 +38,7 @@ function matchFriends(friend, scores) {
       var score = parseInt(scores[i]);
         total = total + Math.abs(score - friend.scores[i]);
     }
-    console.log("scores " + scores);
+    //console.log("scores " + scores);
     return total;
 
 }

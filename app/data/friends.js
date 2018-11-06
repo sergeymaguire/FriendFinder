@@ -17,11 +17,11 @@ var friendsData = [
     {
       name: "Dr. Evil",
       photo:"https://at-cdn-s01.audiotool.com/2012/05/28/documents/ei368KjdlP5qy6gILDLtH9cEAf6H/0/cover256x256-b31436c2a9bc4645b1ad67bc09705cd7.jpg",
-      scores: [5, 4, 1, 3, 5, 3, 2, 1, 1, 5]
+      scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     },
     {
       name: "Mia Wallace",
-      photo:"https://s-media-cache-ak0.pinimg.com/originals/a9/01/29/a9012982eea651ee31e21f4ad11fe96b.jpg",
+      photo:"https://s-media-cache-ak0.pinimg.com/originals/a9/01/29/a9012982eea651ee31e21f4ad11fe96b.jpg?w",
       scores: [3, 1, 2, 4, 2, 3, 1, 5, 4, 3]
     },
     {
