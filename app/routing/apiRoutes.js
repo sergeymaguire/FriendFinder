@@ -2,7 +2,7 @@ let friendsData = require('../data/friends.js');
 
 function apiRoutes(app) {
     app.get('/api/friends', function (req, res) {
-        res.json(friendsData[friendIndex]);
+        res.json(friendsData);
     });
 
     app.post('/api/friends', function (req, res) {

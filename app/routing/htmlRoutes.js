@@ -8,10 +8,10 @@ function htmlRoutes(app) {
     res.sendFile(path.join(__dirname + '/../public/survey.html'));
   });
 
-//   app.get('/hello', function (req, res) {
-//     console.log("survey");
-//     res.send("hello");
-//   });
+  app.get('/friends', function (req, res) {
+  
+    res.sendFile(path.join(__dirname + '/../public/friends.html'));
+  });
 
   app.use(function (req, res) {
     res.sendFile(path.join(__dirname + '/../public/home.html'));

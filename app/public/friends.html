@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+
+<script>
+    $().ready(function (event) {
+        console.log("ready");
+        $.get("/api/friends", function (data) {
+            var friendsHtml = "";
+            console.log(data.name);
+
+            for(var i = 0; i < data.length; i++) {
+                friendsHtml = friendsHtml + "<p>" + data[i].name + "</p>";
+
+            }
+            $("#friendList").append(friendsHtml);
+
+        });
+    });
+</script>
+
+<body>
+    <div id="friendList"></div>
+    <h1>Hello</h1>
+</body>
