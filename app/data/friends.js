@@ -21,12 +21,12 @@ var friendsData = [
     },
     {
       name: "Mia Wallace",
-      photo:"https://s-media-cache-ak0.pinimg.com/originals/a9/01/29/a9012982eea651ee31e21f4ad11fe96b.jpg?w",
+      photo:"https://s-media-cache-ak0.pinimg.com/originals/a9/01/29/a9012982eea651ee31e21f4ad11fe96b.jpg",
       scores: [3, 1, 2, 4, 2, 3, 1, 5, 4, 3]
     },
     {
       name: "Princess Leia",
-      photo:"http://images.techtimes.com/data/images/full/168082/princess-leia-organa.jpg?w=600",
+      photo:"http://images.techtimes.com/data/images/full/168082/princess-leia-organa.jpg?w=200",
       scores: [5, 1, 3, 4, 5, 2, 1, 5, 2, 4]
     }
   ];
