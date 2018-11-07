@@ -17,7 +17,7 @@ function apiRoutes(app) {
 
 }
 function addNameToList() {
-    
+
 }
 //return index of best match to friendsData
 function getBestMatch(scores) {
@@ -37,8 +37,12 @@ function getBestMatch(scores) {
     return bestIndex;
 }
 function friendAlreadyExist (name) {
-    
+    for(var i = 0; i < friendsData.length; i++) {
+        if(friendsData[i].name === name)
+        return true;
+    } 
     return false;
+    alert("this already exists!")
 }
 function matchFriends(friend, scores) {
     var total = 0;
