@@ -18,7 +18,7 @@
 <script>
     $().ready(function (event) {
         console.log("ready");
-        $.get("/api/friends", function (data) {
+        $.get("/api/friends",  function (data) {
             var friendsHtml = "";
             console.log(data.name);
 
