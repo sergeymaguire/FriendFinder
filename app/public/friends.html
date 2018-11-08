@@ -23,7 +23,7 @@
             console.log(data.name);
 
             for(var i = 0; i < data.length; i++) {
-                friendsHtml = friendsHtml + "<p>" + data[i].name + "</p>";
+                friendsHtml = friendsHtml + "<ul>" + "<li>" + "<strong>" + data[i].name + "</strong>"  + "</li>" + "<li>" +  data[i].photo + "</li>" + "<li>" + data[i].scores + "</li>" + "</ul>";
 
             }
             $("#friendList").append(friendsHtml);
