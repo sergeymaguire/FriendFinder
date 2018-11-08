@@ -23,7 +23,7 @@
             console.log(data.name);
 
             for(var i = 0; i < data.length; i++) {
-                friendsHtml = friendsHtml + "<ul>" + "<li>" + "<strong>" + data[i].name + "</strong>"  + "</li>" + "<li>" +  data[i].photo + "</li>" + "<li>" + data[i].scores + "</li>" + "</ul>";
+                friendsHtml = friendsHtml + "<ul class= list-group-item>" + "<li class=list-group-item>" + "<strong>" + data[i].name + "</strong>"  + "</li>" + "<li class= list-group-item>" +  data[i].photo + "</li>" + "<li class=list-group-item>" + data[i].scores + "</li>" + "</ul>";
 
             }
             $("#friendList").append(friendsHtml);
