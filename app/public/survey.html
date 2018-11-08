@@ -258,12 +258,11 @@ img{
           ]
         };
 
-
         $.post("/api/friends", userData, function (data) {
-          if(data.exists) {
-            alert("User already exists!")
-            return;
-          }
+          // if(data.exists) {
+          //   alert("User already exists!")
+          //   return;
+          // }
 
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);

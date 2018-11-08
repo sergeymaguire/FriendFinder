@@ -1,15 +1,17 @@
 let friendsData = require('../data/friends.js');
 
 function apiRoutes(app) {
-    app.get('/api/friendExist/name/:name', function (req, res) {
+    app.get('/api/friendExist', function (req, res) {
         if (friendAlreadyExist(req.body.name))
             res.json({
                 result: true
             });
-        else
+        else {
+            addNameToList(req.body);
             res.json({
                 result: false
             });
+        }
 
     });
 
@@ -17,24 +19,36 @@ function apiRoutes(app) {
         res.json(friendsData);
     });
 
- 
+
 
     app.post('/api/friends', function (req, res) {
+        var friendIndex = 0;
+        friendIndex = getBestMatch(req.body.scores);
         if (!friendAlreadyExist(req.body.name)) {
             addNameToList(req.body);
-        } else{
-           res.json({exists: true});
-           return;
-        }
-        let friendIndex = getBestMatch(req.body.scores);
-        //console.dir("req " + req);
-        //console.log("req.scores " + req.body.scores);
+         } 
+
+       
         res.json(friendsData[friendIndex]);
     });
 
 }
 
-function addNameToList() {
+function addNameToList(body) {
+
+    var newFriend = {
+        name: body.name,
+        photo: body.photo,
+        scores: []
+    };
+
+    for (var i = 0; i < body.scores.length; i++) {
+        newFriend.scores[i] = parseInt(body.scores[i]);
+    }
+    friendsData.push(newFriend);
+
+
+
 
 }
 //return index of best match to friendsData
@@ -54,6 +68,8 @@ function getBestMatch(scores) {
     }
     return bestIndex;
 }
+
+
 
 var friendAlreadyExist = function (name) {
     name = name.toLowerCase();
