@@ -23,7 +23,7 @@ function apiRoutes(app) {
 
     app.post('/api/friends', function (req, res) {
         var friendIndex = 0;
-        friendIndex = getBestMatch(req.body.scores);
+        friendIndex = getBestMatch(req.body.scores, req.body.name);
         if (!friendAlreadyExist(req.body.name)) {
             addNameToList(req.body);
          } 
@@ -45,20 +45,26 @@ function addNameToList(body) {
     for (var i = 0; i < body.scores.length; i++) {
         newFriend.scores[i] = parseInt(body.scores[i]);
     }
+    newFriend.added = true;
     friendsData.push(newFriend);
+    //friendsData.push(friendsData.js)
 
 
 
 
 }
 //return index of best match to friendsData
-function getBestMatch(scores) {
+function getBestMatch(scores, name) {
     var total = 0,
         bestTotal = 99999,
         bestIndex = 0;
+        name = name.toLowerCase();
     for (var i = 0; i < friendsData.length; i++) {
         //console.log("friendsData[i] " + friendsData[i].scores);
         //console.log("scores " + scores);
+        if(name === friendsData[i].name.toLowerCase() && ('added' in friendsData[i])) {
+            continue;
+        }
         total = matchFriends(friendsData[i], scores);
         if (total < bestTotal) {
             //console.log("bestTotal " + bestTotal);
